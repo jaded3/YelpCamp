@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+
+<h1>Form</h1>
+<div class="container">
+    <form action="/home" method="POST">
+        <div class="form-group">
+            <label>Title </label>
+            <div><input name="review[title]" type="text" placeholder="Title"></div>
+        </div>
+        <div class="form-group">
+            <label>Author</label>
+            <div><input name="review[author]" type="text" placeholder="Author"></div>
+        </div>
+        <div class="form-group">
+            <label>Image</label>
+            <div><input name="review[cover]" type="text" placeholder="Cover"></div>
+        </div>
+        <div class="form-group">
+            <label>Review</label>
+            <div><input name="review[body]" type="text" placeholder="Review"></div>
+        </div>
+            <button class="btn btn-dark">Submit</button>
+        </div>
+    </form>
+</div>
+
+<% include ../partials/footer %>

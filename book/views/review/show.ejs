@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+
+<h1>Show Page</h1>
+
+
+<div class="container">
+        <h2><%= review.title %></h2>
+        <h4>By: <%= review.author %></h4>
+        <img src=<%=review.cover%> width="500" height="300">
+        <p><%=review.body %></p>
+        <p><%=review.created.toDateString()%></p>
+        <a href="/home/<%= review._id %>/edit">Edit</a>
+        <form action="/home/<%=review._id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+       
+</div>
+ <%review.comments.forEach(function(comment){ %>
+            <p><%=comment.author%></p>
+            <p><%=comment.text%></p>
+        <% });%>
+    
+    
+<% include ../partials/footer %>

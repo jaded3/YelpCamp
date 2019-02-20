@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <h1>Home Page</h1>
+    
+    <a href="/home/new">Add New Review</a>
+    
+    <% reviews.forEach(function(review){ %>
+        <div class="container">
+             
+            <h2><%= review.title %></h2>
+            <h4>By: <%= review.author %></h4>
+            <img src=<%=review.cover%> width="500" height="300">
+            <p><%=review.body %></p>
+            <p><%=review.created.toDateString()%></p>
+            <a href="/home/<%=review._id%>">Read More</a>
+        </div>
+    <% }); %> 
+</div>
+
+<% include ../partials/footer %>
+
